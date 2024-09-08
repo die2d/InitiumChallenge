@@ -24,7 +24,7 @@ La solución está organizada en varias capas para mantener la separación de re
 
 1. **Inyección de Dependencias (Dependency Injection)**: Se utiliza para desacoplar la lógica de negocio de la capa de acceso a datos. Las interfaces (`IBookService`, `IUserService`, `IRepository<T>`) se implementan y se inyectan en los controladores, lo que facilita la prueba y el mantenimiento.
    
-2. **Entity Framework Core**: Utilizado para el acceso a la base de datos. `LibraryManagementDbContext` maneja las entidades y las migraciones para la base de datos SQL Server.
+2. **Entity Framework Core**: Utilizado para el acceso a la base de datos. `LibraryManagementDbContext` maneja las entidades y las migraciones para la base de datos SQL Server. DATABASE FIRTS
 
 3. **Logging con ILogger**: Implementado en los servicios para registrar eventos clave, como intentos de autenticación, operaciones CRUD y errores. Esto ayuda a mantener un registro de la actividad y diagnosticar problemas.
 
@@ -35,6 +35,9 @@ La solución está organizada en varias capas para mantener la separación de re
 6. **Manejo de Errores**: Implementación de un manejo de errores adecuado en los controladores y servicios para retornar códigos de estado HTTP apropiados (404, 400, 500, etc.) en diferentes escenarios.
 
 7. **Configuración desde appsettings.json**: Algunos parámetros, como el límite máximo de libros que un usuario puede registrar, se leen desde `appsettings.json` para facilitar la configuración sin necesidad de modificar el código.
+
+8. **Encriptación de Password**
+Estoy utilizando SHA256 para encriptar las contraseñas.
 
 ## Endpoints Principales
 
@@ -49,30 +52,7 @@ La solución está organizada en varias capas para mantener la separación de re
 
 ## Requisitos Previos
 
-- .NET 6 SDK o superior
+- .NET 8 SDK
 - SQL Server o Azure SQL Database
 - Visual Studio 2022 o cualquier editor compatible con .NET
-
-## Configuración
-
-1. Clona el repositorio: 
-    ```bash
-    git clone https://github.com/tu-repositorio.git
-    ```
-2. Configura la cadena de conexión a la base de datos en `appsettings.json`.
-3. Ejecuta las migraciones de Entity Framework Core para crear la base de datos:
-    ```bash
-    dotnet ef database update
-    ```
-4. Ejecuta el proyecto:
-    ```bash
-    dotnet run
-    ```
-
-## Pruebas
-
-El proyecto incluye pruebas unitarias que se pueden ejecutar con:
-```bash
-dotnet test
-
 
