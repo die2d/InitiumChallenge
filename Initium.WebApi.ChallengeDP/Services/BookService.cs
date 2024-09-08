@@ -1,10 +1,6 @@
 ﻿using Initium.WebApi.ChallengeDP.Interfaces;
 using Initium.WebApi.ChallengeDP.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Initium.WebApi.ChallengeDP.Services
 {
@@ -47,7 +43,6 @@ namespace Initium.WebApi.ChallengeDP.Services
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
-
         }
 
         public async Task<Book> GetBookByIdAsync(int id)

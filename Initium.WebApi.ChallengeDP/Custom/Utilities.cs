@@ -30,7 +30,6 @@ namespace Initium.WebApi.ChallengeDP.Custom
                 return builder.ToString();
             }
         }
-
         public string GenerateJWT(User user)
         {
             var userClaims = new[]

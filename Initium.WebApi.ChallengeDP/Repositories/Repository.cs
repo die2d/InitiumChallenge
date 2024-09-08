@@ -1,11 +1,7 @@
 ﻿using Initium.WebApi.ChallengeDP.Interfaces;
 using Initium.WebApi.ChallengeDP.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace Initium.WebApi.ChallengeDP.Repositories
 {
@@ -28,8 +24,6 @@ namespace Initium.WebApi.ChallengeDP.Repositories
         public async Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includes)
     {
         IQueryable<T> query = _dbSet;
-
-        // Aplica carga temprana (eager loading) para las propiedades incluidas
         if (includes != null)
         {
             foreach (var include in includes)

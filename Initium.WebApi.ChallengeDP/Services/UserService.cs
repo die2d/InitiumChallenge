@@ -1,12 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Initium.WebApi.ChallengeDP.Custom;
+using Initium.WebApi.ChallengeDP.DTOs;
 using Initium.WebApi.ChallengeDP.Interfaces;
 using Initium.WebApi.ChallengeDP.Models;
-using Initium.WebApi.ChallengeDP.DTOs;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Initium.WebApi.ChallengeDP.Custom;
 using Microsoft.Extensions.Options;
 namespace Initium.WebApi.ChallengeDP.Services
 {

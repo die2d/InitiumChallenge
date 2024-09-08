@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Initium.WebApi.ChallengeDP.Custom;
+﻿using Initium.WebApi.ChallengeDP.Custom;
 using Initium.WebApi.ChallengeDP.Models;
 using Initium.WebApi.ChallengeDP.Models.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Initium.WebApi.ChallengeDP.Controllers
 {
@@ -25,7 +24,6 @@ namespace Initium.WebApi.ChallengeDP.Controllers
         [Route("Register")]
         public async Task<IActionResult> Register(UserDTO userDTO)
         {
-
             var User = new User
             {
                 Username = userDTO.Username,
@@ -57,9 +55,6 @@ namespace Initium.WebApi.ChallengeDP.Controllers
                     return StatusCode(StatusCodes.Status200OK, new { isSuccess = false, token = "" });
                 else
                     return StatusCode(StatusCodes.Status200OK, new { isSuccess = true, token = _utilities.GenerateJWT(user) });
-
-
-            
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Initium.WebApi.ChallengeDP.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -46,7 +45,6 @@ namespace Initium.WebApi.ChallengeDP.Controllers
         [Authorize]
         public async Task<IActionResult> GetUserBooks([FromQuery] string? genre, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            // Extraer el userId del token JWT
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null)
             {

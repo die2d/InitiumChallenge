@@ -9,20 +9,12 @@ using Initium.WebApi.ChallengeDP.Services;
 using Initium.WebApi.ChallengeDP.Repositories;
 using Microsoft.OpenApi.Models;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-// Configurar Swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Library API", Version = "v1" });
-
-    // Configurar el esquema de autenticación
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -86,13 +78,11 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Añadir la configuración de la sección "LibrarySettings" de appsettings.json
 builder.Services.Configure<LibrarySettings>(builder.Configuration.GetSection("LibrarySettings"));
 
 
 var app = builder.Build();
 
-// Middleware global de manejo de errores
 app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>

@@ -1,11 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Initium.WebApi.ChallengeDP.Custom;
-using Initium.WebApi.ChallengeDP.Models;
-using Initium.WebApi.ChallengeDP.Models.DTOs;
+﻿using Initium.WebApi.ChallengeDP.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Initium.WebApi.ChallengeDP.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Initium.WebApi.ChallengeDP.Controllers
 {
@@ -33,8 +28,6 @@ namespace Initium.WebApi.ChallengeDP.Controllers
             return Ok(books);
 
         }
-
-
     }
 }
 
