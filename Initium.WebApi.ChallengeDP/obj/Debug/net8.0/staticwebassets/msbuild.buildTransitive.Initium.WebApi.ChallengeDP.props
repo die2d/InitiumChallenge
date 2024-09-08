@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Initium.WebApi.ChallengeDP.props" />
+</Project>
