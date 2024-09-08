@@ -1,5 +1,6 @@
 # InitiumChallenge
 Prueba Técnica requerida
+Realizada por **Diego Pérez**
 
 # Library Management API
 
